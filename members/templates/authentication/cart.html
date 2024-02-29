@@ -1,0 +1,32 @@
+{% extends 'authentication/base2.html' %}
+{% block content %}
+{% load static %}
+{% load mathfilters %}
+
+<div style="width:70%; position: relative; top:170px; left:260px; " class="main-product">
+
+	{% for product in products %}
+		{% for k in cart.board %}
+			{% if k == product.id %}
+					<div class="main-pro">
+						<img src="{{product.img}}" alt="">
+						<div  class="rating">
+						</div>
+						<h4>{{ product.itsname }} </h4>
+						<h7>{{ r.b.all.count }}</h7>
+						<h5>$ {{ product.price }}</h5>
+						<h6>{{ product.count }}</h6>
+						
+						<form method='GET'>
+							<input type="submit" value="Next" name="Next"/>
+						</form>
+					</div>
+				
+				{% for m in cart.board2 %}
+					{{ m }}
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+</div>
+{% endblock %}

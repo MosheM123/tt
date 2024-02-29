@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecommerce website design</title>
+    <!-- css-link -->
+    <link rel="stylesheet" href="/templates/kids ecommerce website/style.css">
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- box-icon-link -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="logo"><img src="/easypay/static/easypay/logo.png" alt=""></a>
+
+      <ul class="navlist">
+        <li><a href="#">Home</a></li>
+        <li><a href="#go_down1">About</a></li>
+        <li><a href="#go_down4">Pages</a></li>
+        <li><a href="#go_down3">Shop</a></li>
+        <li><a href="#go_down2">Contact</a></li>
+      </ul>
+
+      <div class="top-icon">
+        <a href="#"><i class='bx bx-search'></i></a>
+        <a href="/cart/{{ user.id }}"><i class='bx bx-shopping-bag'></i>{{ user.no_cart }}</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+    </header>
+
+    <!-- home-section -->
+    <section class="home">
+      <div class="home-text">
+        <h1>Best KIds Store <br> & Online Shop</h1>
+        <h2>Welcome {{user.username}}!</h2>
+        <h4>Give The Gift Of Your Children Everyday</h4>
+
+        <div class="home-btn">
+          <a href="#">Shop This Now</a>
+        </div>
+      </div>
+
+      <div class="home-img">
+        <img src="image/background.png" alt="">
+      </div>
+    </section>
+
+    <!-- simple-section -->
+    <section class="simple-pro">
+      <div class="pro">
+        <div class="pro-1">
+          <div class="pro-text">
+            <h3>Baby Dress</h3>
+            <h5>$32.00</h5>
+            <h6>Shop Now</h6>
+          </div>
+
+          <div class="pro-img">
+            <img src="image/top-1.png" alt="">
+          </div>
+        </div>
+
+        <div class="pro-1">
+          <div class="pro-text">
+            <h3>Baby Toys</h3>
+            <h5>$32.00</h5>
+            <h6>Shop Now</h6>
+          </div>
+
+          <div class="pro-img">
+            <img src="/easypay/static/easypay/top-2.png" alt="">
+          </div>
+        </div>
+
+        <div class="pro-1">
+          <div class="pro-text">
+            <h3>Teddy Bear</h3>
+            <h5>$18.00</h5>
+            <h6>Shop Now</h6>
+          </div>
+
+          <div class="pro-img">
+            <img src="/easypay/static/easypay/top-3.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="position: absolute;  left:320px;" class="product-sector">
+
+      <a href="#" class="sec-dif">All Iteams</a>
+      <a href="log0_3">0 - 3</a>
+      <a href="log4_9">4 - 9</a>
+      <a href="log10_14">10 - 14</a>
+      <a href="log14plus">15 +</a>
+    </div>
+    &nbsp
+    <div style="position: absolute; top:1000px; left:530px;"  class="product-text">
+
+      <div class="product-sector">
+        <a href="boyl">Boys</a>
+        <a href="girll">Girls</a>
+        &nbsp
+      </div>
+    </div>
+    &nbsp
+    <!-- About-section -->
+    <section id="go_down1" class="about">
+      &nbsp
+      <div class="about-center">
+        &nbsp
+        <h1>About Us</h1>
+        <h5></h5>
+      </div>
+
+      <div class="main-about">
+        <div class="about-img">
+          <img src="image/about.png" alt="">
+        </div>
+
+        <div class="about-text">
+          <h4>Hello There!</h4>
+          <h2>Lorem ipsum dolor consectetur <br> adipisicing elite sed dolo</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo temp incidi ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duislpl aute irure dolor in reprehenderit.</p>
+
+          <div class="home-btn">
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- product-section -->
+    <section id="go_down3" class="product">
+      <div class="product-text">
+        <h1>New Collection</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua</p>
+
+      </div>
+
+
+      <div class="main-product">
+        {% for x in products %}
+        <div class="main-pro">
+          <img src="{{x.img}}" alt="">
+          <div class="rating">
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+          </div>
+
+          <h4>{{ x.itsname }} </h4>
+          <h5>$ {{ x.price }}</h5>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Deal-section -->
+    <section class="deal">
+      <div class="main-deal">
+        <h1>Deal of The Day</h1>
+        <h4><span>UPTO 35% OFF</span> ON ALL OTHER BABY PRODUCT</h4>
+
+        <div class="home-btn">
+          <a href="#">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discount-section -->
+    <section class="discount">
+      <div class="main-disc">
+        <div class="dics-1">
+          <div class="dics-img">
+            <img src="/easypay/static/easypay/disc-1.png" alt="">
+          </div>
+
+          <div class="dics-text">
+            <h1>Collection</h1>
+            <h4>Flat <span>20%</span> Off</h4>
+
+            <div class="home-btn">
+              <a class="dics-btn" href="#">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dics-1">
+          <div class="dics-img">
+            <img src="/easypay/static/easypay/disc-2.png" alt="">
+          </div>
+
+          <div class="dics-text">
+            <h1>Collection</h1>
+            <h4>Flat <span>30%</span> Off</h4>
+
+            <div class="home-btn">
+              <a class="dics-btn" href="#">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending-product-section -->
+    <section class="trend-product">
+      <div class="trend-center">
+        <h1>On Sale !</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="main-product">
+        {% for a in products2 %}
+        <div class="main-pro">
+          <img src="{{ a.img }}" alt="">
+
+          <div class="rating">
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+            <a href="#"><i class='bx bxs-star'></i></a>
+          </div>
+
+          <h4>{{ a.itsname }}</h4>
+          <h5>$ {{ a.price }}</h5>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Blog-section -->
+    <section id="go_down4" class="blog">
+      <div class="blog-center">
+        <h1>Latest Blog</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="blog-info">
+        <div class="main-blog">
+          <img src="image/blog-1.jpg" alt="">
+          <h4>By, <span>June CHa.</span> 12 Dec, 2023</h4>
+          <h1>Baby Planet's toys makes <br> learning so easy</h1>
+
+          <div class="home-btn">
+            <a class="btn" href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="main-blog">
+          <img src="image/blog-2.jpg" alt="">
+          <h4>By, <span>July CHa.</span> 14 Dec, 2023</h4>
+          <h1>Baby Planet's toys makes <br> learning so easy</h1>
+
+          <div class="home-btn">
+            <a class="btn" href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="main-blog">
+          <img src="image/blog-3.jpg" alt="">
+          <h4>By, <span>June CHa.</span> 10 Dec, 2023</h4>
+          <h1>Baby Planet's toys makes <br> learning so easy</h1>
+
+          <div class="home-btn">
+            <a class="btn" href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact-section -->
+    <section class="contact">
+      <div class="main-contact">
+        <div class="cont-info">
+          <img src="/easypay/static/easypay/logo-light.png" alt="">
+          <h6>Lorem ipsum dolor sit amet, consecl adipisicing elit, sed do eiusmod teml incididunt ut labore et dolore magna aliqua Ut enim</h6>
+
+          <div class="contact-icon">
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+          </div>
+        </div>
+
+        <div class="cont-info2">
+          <h4>Quick Links</h4>
+          <p>- Support</p>
+          <p>- Helpline</p>
+          <p>- Courses</p>
+          <p>- About</p>
+          <p>- Event</p>
+        </div>
+
+        <div class="cont-info2">
+          <h4>Other Page</h4>
+          <p>- About</p>
+          <p>- Blog</p>
+          <p>- Speakers</p>
+          <p>- Contact</p>
+          <p>- Tricket</p>
+        </div>
+
+        <div class="cont-info3">
+          <h4 id="go_down2">Store Information.</h4>
+          <p>2023 Your Address Goes Here.</p>
+          <p>3100,upashahar sylhet</p>
+          <p>Phone/wp:01747348731</p>
+          <p>saidulahmed3080@gmail.com</p>
+          <img src="/easypay/static/easypay/payment1.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <div class="end-text">
+      <p>©2024 <span>KIDOL</span>. Made with ❤️ by Moshe Manoah</p>
+    </div>
+
+    <!-- java-link -->
+    <script src="/templates/kids ecommerce website/java.js"></script>
+  </body>
+</html>
